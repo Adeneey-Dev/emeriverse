@@ -30,7 +30,7 @@ const variantClasses: Record<ButtonVariant, string> = {
   primary:
     "bg-gold text-ink hover:bg-gold-deep active:bg-gold-deep shadow-[0_1px_0_0_rgba(0,0,0,0.15)]",
   "outline-dark":
-    "border border-charcoal/25 text-charcoal hover:border-charcoal hover:bg-charcoal/[0.03]",
+    "border border-fg/25 text-fg hover:border-fg hover:bg-fg/[0.03]",
   "outline-light":
     "border border-cream/35 text-cream hover:border-cream hover:bg-cream/10",
   "ghost-light": "text-cream hover:text-gold-pale",

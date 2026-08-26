@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  /* ---- Color tokens ---- */
+  /* ---- Brand chrome tokens (Navbar, Hero, Footer, Membership) ----
+     These sections are always dark by design and are NOT affected by
+     the light/dark theme toggle - "cream" here just means "off-white
+     text/surface sitting on the dark ink chrome". */
   --color-ink: #14110e;
   --color-ink-soft: #1f1a15;
   --color-ink-line: rgba(247, 240, 225, 0.12);
@@ -10,6 +13,9 @@
   --color-cream-deep: #f1e7d3;
   --color-cream-line: #e4d9c2;
 
+  /* Fixed "paper tag" tokens - used only by <Badge>, which sits on top
+     of book cover artwork rather than the page background, so it should
+     not repaint when the reader toggles light/dark mode. */
   --color-charcoal: #26211c;
   --color-stone: #6f6558;
   --color-stone-light: #9a8f7e;
@@ -17,6 +23,20 @@
   --color-gold: #b8863b;
   --color-gold-deep: #8c6423;
   --color-gold-pale: #e3c785;
+
+  /* ---- Theme-aware tokens (content sections) ----
+     Used by every "light" section (feature strip, books, testimonials,
+     newsletter, etc). Values below are the light-theme defaults; the
+     .dark class overrides them further down this file, so any element
+     using these utilities (bg-surface, text-fg, ...) repaints instantly
+     when the theme toggles - no per-component logic required. */
+  --color-surface: #faf5ea;
+  --color-surface-alt: #f1e7d3;
+  --color-surface-line: #e4d9c2;
+
+  --color-fg: #26211c;
+  --color-fg-muted: #6f6558;
+  --color-fg-faint: #9a8f7e;
 
   /* ---- Type tokens ---- */
   --font-display: "Fraunces", "Iowan Old Style", ui-serif, Georgia, serif;
@@ -26,21 +46,42 @@
   --radius-card: 0.375rem;
 }
 
+/* Dark theme overrides. Applied when <html class="dark"> is set by
+   ThemeProvider (see src/providers/ThemeProvider.tsx). Only the
+   theme-aware tokens flip - the ink/cream brand-chrome tokens stay put
+   so the hero/navbar/footer keep their intentional dark styling in
+   both themes. */
+.dark {
+  --color-surface: #17130f;
+  --color-surface-alt: #201a14;
+  --color-surface-line: rgba(247, 240, 225, 0.12);
+
+  --color-fg: #f1ece0;
+  --color-fg-muted: #b3a891;
+  --color-fg-faint: #85795f;
+}
+
 @layer base {
   * {
-    border-color: var(--color-cream-line);
+    border-color: var(--color-surface-line);
   }
 
   html {
     scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
   }
 
   body {
     font-family: var(--font-sans);
-    background-color: var(--color-cream);
-    color: var(--color-charcoal);
+    background-color: var(--color-surface);
+    color: var(--color-fg);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
   ::selection {

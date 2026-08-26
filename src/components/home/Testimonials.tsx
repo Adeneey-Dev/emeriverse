@@ -18,7 +18,7 @@ export function Testimonials() {
   const goTo = (i: number) => setIndex((i + mockTestimonials.length) % mockTestimonials.length);
 
   return (
-    <section className="bg-cream py-20 lg:py-28" aria-labelledby="testimonials-heading">
+    <section className="bg-surface py-20 lg:py-28" aria-labelledby="testimonials-heading">
       <div className="container-page">
         <SectionHeading
           eyebrow="What Readers Say"
@@ -28,7 +28,7 @@ export function Testimonials() {
         />
 
         <div className="relative mx-auto mt-12 max-w-2xl">
-          <div className="relative min-h-[220px] rounded-sm border border-cream-line bg-white/60 p-8 text-center shadow-sm sm:p-10">
+          <div className="relative min-h-[220px] rounded-sm border border-surface-line bg-surface-alt/60 p-8 text-center shadow-sm sm:p-10">
             <AnimatePresence mode="wait">
               <motion.div
                 key={testimonial.id}
@@ -40,7 +40,7 @@ export function Testimonials() {
                 <span className="font-display text-5xl leading-none text-gold" aria-hidden="true">
                   &ldquo;
                 </span>
-                <p className="mx-auto mt-2 max-w-lg font-display text-lg italic leading-relaxed text-charcoal">
+                <p className="mx-auto mt-2 max-w-lg font-display text-lg italic leading-relaxed text-fg">
                   {testimonial.quote}
                 </p>
 
@@ -49,8 +49,8 @@ export function Testimonials() {
                     {testimonial.initials}
                   </span>
                   <div className="text-left">
-                    <p className="text-sm font-semibold text-charcoal">{testimonial.name}</p>
-                    <p className="text-xs text-stone">{testimonial.location}</p>
+                    <p className="text-sm font-semibold text-fg">{testimonial.name}</p>
+                    <p className="text-xs text-fg-muted">{testimonial.location}</p>
                   </div>
                 </div>
 
@@ -58,7 +58,7 @@ export function Testimonials() {
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star
                       key={i}
-                      className={cn("h-4 w-4", i < testimonial.rating ? "fill-gold text-gold" : "fill-cream-deep text-cream-line")}
+                      className={cn("h-4 w-4", i < testimonial.rating ? "fill-gold text-gold" : "fill-surface-alt text-surface-line")}
                       strokeWidth={0}
                     />
                   ))}
@@ -72,7 +72,7 @@ export function Testimonials() {
               type="button"
               onClick={() => goTo(index - 1)}
               aria-label="Previous testimonial"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-cream-line text-charcoal transition-colors hover:border-gold hover:text-gold"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-surface-line text-fg transition-colors hover:border-gold hover:text-gold"
             >
               <ChevronLeft className="h-4 w-4" strokeWidth={2} />
             </button>
@@ -85,7 +85,7 @@ export function Testimonials() {
                   onClick={() => setIndex(i)}
                   aria-label={`Show testimonial from ${t.name}`}
                   aria-current={i === index}
-                  className={cn("h-1.5 rounded-full transition-all", i === index ? "w-6 bg-gold" : "w-1.5 bg-cream-line")}
+                  className={cn("h-1.5 rounded-full transition-all", i === index ? "w-6 bg-gold" : "w-1.5 bg-surface-line")}
                 />
               ))}
             </div>
@@ -94,7 +94,7 @@ export function Testimonials() {
               type="button"
               onClick={() => goTo(index + 1)}
               aria-label="Next testimonial"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-cream-line text-charcoal transition-colors hover:border-gold hover:text-gold"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-surface-line text-fg transition-colors hover:border-gold hover:text-gold"
             >
               <ChevronRight className="h-4 w-4" strokeWidth={2} />
             </button>

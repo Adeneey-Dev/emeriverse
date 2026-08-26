@@ -33,7 +33,7 @@ export function FeatureStrip() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative border-b border-cream-line bg-cream" aria-label="What you can do here">
+    <section className="relative border-b border-surface-line bg-surface" aria-label="What you can do here">
       <div className="container-page grid grid-cols-1 gap-x-6 gap-y-10 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-10 lg:py-16">
         {FEATURES.map((feature, index) => {
           const Icon = feature.icon;
@@ -44,14 +44,14 @@ export function FeatureStrip() {
               whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.45, delay: index * 0.08 }}
-              className="group relative flex flex-col items-start gap-4 border-cream-line pl-0 sm:pr-4 lg:border-l lg:pl-8 lg:first:border-l-0 lg:first:pl-0"
+              className="group relative flex flex-col items-start gap-4 border-surface-line pl-0 sm:pr-4 lg:border-l lg:pl-8 lg:first:border-l-0 lg:first:pl-0"
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-cream-deep text-gold transition-colors duration-200 group-hover:bg-gold group-hover:text-cream">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-surface-alt text-gold transition-colors duration-200 group-hover:bg-gold group-hover:text-cream">
                 <Icon className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
               </span>
               <div>
-                <h3 className="font-display text-lg font-medium text-charcoal">{feature.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-stone">{feature.description}</p>
+                <h3 className="font-display text-lg font-medium text-fg">{feature.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-fg-muted">{feature.description}</p>
               </div>
             </motion.div>
           );

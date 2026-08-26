@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Search, Moon, Sun, Feather } from "lucide-react";
 import { Button } from "../ui/Button";
 import { cn } from "../../lib/cn";
+import { useTheme } from "../../providers/useTheme";
 import type { NavLink } from "../../types";
 
 const NAV_LINKS: NavLink[] = [
@@ -18,7 +19,8 @@ const NAV_LINKS: NavLink[] = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isDark, setIsDark] = useState(true);
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === "dark";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -85,11 +87,11 @@ export function Navbar() {
           <button
             type="button"
             aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-            aria-pressed={!isDark}
-            onClick={() => setIsDark((v) => !v)}
+            aria-pressed={isDark}
+            onClick={toggleTheme}
             className="text-cream/80 transition-colors hover:text-gold-pale"
           >
-            {isDark ? <Moon className="h-[18px] w-[18px]" strokeWidth={1.75} /> : <Sun className="h-[18px] w-[18px]" strokeWidth={1.75} />}
+            {isDark ? <Sun className="h-[18px] w-[18px]" strokeWidth={1.75} /> : <Moon className="h-[18px] w-[18px]" strokeWidth={1.75} />}
           </button>
           <a href="#login" className="text-sm text-cream/80 transition-colors hover:text-cream">
             Login
@@ -133,9 +135,20 @@ export function Navbar() {
             >
               <div className="flex items-center justify-between">
                 <span className="font-display text-lg font-medium text-cream">James Whitaker</span>
-                <button type="button" aria-label="Close menu" onClick={() => setMenuOpen(false)} className="text-cream">
-                  <X className="h-6 w-6" strokeWidth={1.75} />
-                </button>
+                <div className="flex items-center gap-4">
+                  <button
+                    type="button"
+                    aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+                    aria-pressed={isDark}
+                    onClick={toggleTheme}
+                    className="text-cream/80 transition-colors hover:text-gold-pale"
+                  >
+                    {isDark ? <Sun className="h-5 w-5" strokeWidth={1.75} /> : <Moon className="h-5 w-5" strokeWidth={1.75} />}
+                  </button>
+                  <button type="button" aria-label="Close menu" onClick={() => setMenuOpen(false)} className="text-cream">
+                    <X className="h-6 w-6" strokeWidth={1.75} />
+                  </button>
+                </div>
               </div>
 
               <ul className="mt-10 flex flex-col gap-1">

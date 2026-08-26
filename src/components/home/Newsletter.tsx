@@ -29,17 +29,17 @@ export function Newsletter() {
   };
 
   return (
-    <section className="bg-cream-deep py-16 lg:py-20" aria-labelledby="newsletter-heading">
+    <section className="bg-surface-alt py-16 lg:py-20" aria-labelledby="newsletter-heading">
       <div className="container-page">
-        <div className="mx-auto flex max-w-2xl flex-col items-center rounded-sm border border-cream-line bg-cream px-6 py-12 text-center sm:px-12">
+        <div className="mx-auto flex max-w-2xl flex-col items-center rounded-sm border border-surface-line bg-surface px-6 py-12 text-center sm:px-12">
           <span className="flex h-12 w-12 items-center justify-center rounded-full bg-ink text-gold">
             <Mail className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
           </span>
 
-          <h2 id="newsletter-heading" className="mt-5 font-display text-2xl font-medium text-charcoal sm:text-3xl">
+          <h2 id="newsletter-heading" className="mt-5 font-display text-2xl font-medium text-fg sm:text-3xl">
             Stay Connected
           </h2>
-          <p className="mt-3 max-w-md text-sm leading-relaxed text-stone sm:text-base">
+          <p className="mt-3 max-w-md text-sm leading-relaxed text-fg-muted sm:text-base">
             Be the first to know about new releases, exclusive stories, and special offers.
           </p>
 
@@ -49,7 +49,7 @@ export function Newsletter() {
                 key="success"
                 initial={shouldReduceMotion ? undefined : { opacity: 0, y: 8 }}
                 animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-                className="mt-7 flex items-center gap-2 rounded-sm bg-ink/5 px-5 py-3 text-sm font-medium text-charcoal"
+                className="mt-7 flex items-center gap-2 rounded-sm bg-fg/5 px-5 py-3 text-sm font-medium text-fg"
                 role="status"
               >
                 <CheckCircle2 className="h-4 w-4 text-gold" strokeWidth={2} />
@@ -82,7 +82,7 @@ export function Newsletter() {
                     }}
                     aria-invalid={Boolean(error)}
                     aria-describedby={error ? "newsletter-error" : undefined}
-                    className="w-full rounded-sm border border-cream-line bg-white px-4 py-3 text-sm text-charcoal placeholder:text-stone-light focus:border-gold"
+                    className="w-full rounded-sm border border-surface-line bg-surface px-4 py-3 text-sm text-fg placeholder:text-fg-faint focus:border-gold"
                   />
                   {error && (
                     <p id="newsletter-error" className="mt-1.5 text-xs text-left text-red-700">
@@ -97,7 +97,7 @@ export function Newsletter() {
             )}
           </AnimatePresence>
 
-          <p className="mt-5 flex items-center gap-1.5 text-xs text-stone">
+          <p className="mt-5 flex items-center gap-1.5 text-xs text-fg-muted">
             <ShieldCheck className="h-3.5 w-3.5" strokeWidth={1.75} />
             No spam. Unsubscribe anytime.
           </p>

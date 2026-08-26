@@ -13,7 +13,7 @@ export function AuthorIntro() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="about" className="bg-cream-deep py-20 lg:py-28" aria-labelledby="about-heading">
+    <section id="about" className="bg-surface-alt py-20 lg:py-28" aria-labelledby="about-heading">
       <div className="container-page grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <motion.div
           initial={shouldReduceMotion ? undefined : { opacity: 0, scale: 0.97 }}
@@ -40,9 +40,9 @@ export function AuthorIntro() {
             </div>
           </div>
 
-          <div className="absolute -bottom-6 -right-4 hidden w-44 rounded-sm border border-cream-line bg-cream p-4 shadow-lg sm:block lg:-right-8">
-            <p className="font-display text-2xl font-medium text-charcoal">15+</p>
-            <p className="mt-0.5 text-xs text-stone">Years crafting stories readers remember</p>
+          <div className="absolute -bottom-6 -right-4 hidden w-44 rounded-sm border border-surface-line bg-surface p-4 shadow-lg sm:block lg:-right-8">
+            <p className="font-display text-2xl font-medium text-fg">15+</p>
+            <p className="mt-0.5 text-xs text-fg-muted">Years crafting stories readers remember</p>
           </div>
         </motion.div>
 
@@ -56,7 +56,7 @@ export function AuthorIntro() {
             }
           />
 
-          <div className="mt-6 space-y-4 text-base leading-relaxed text-stone">
+          <div className="mt-6 space-y-4 text-base leading-relaxed text-fg-muted">
             <p>
               I&rsquo;ve spent the better part of two decades chasing the sentence that makes a
               reader stop, look up, and sit with a feeling a little longer. That pursuit has
@@ -75,11 +75,11 @@ export function AuthorIntro() {
             Read My Story
           </Button>
 
-          <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-cream-line pt-8">
+          <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-surface-line pt-8">
             {ACHIEVEMENTS.map((item) => (
               <div key={item.label}>
-                <dd className="font-display text-2xl font-medium text-charcoal sm:text-3xl">{item.value}</dd>
-                <dt className="mt-1 text-xs leading-snug text-stone">{item.label}</dt>
+                <dd className="font-display text-2xl font-medium text-fg sm:text-3xl">{item.value}</dd>
+                <dt className="mt-1 text-xs leading-snug text-fg-muted">{item.label}</dt>
               </div>
             ))}
           </dl>

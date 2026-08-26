@@ -32,7 +32,7 @@ export function SectionHeading({
       <h2
         className={cn(
           "font-display font-medium leading-[1.1] text-3xl sm:text-4xl lg:text-[2.75rem]",
-          tone === "dark" ? "text-charcoal" : "text-cream",
+          tone === "dark" ? "text-fg" : "text-cream",
         )}
       >
         {heading}
@@ -41,7 +41,7 @@ export function SectionHeading({
         <p
           className={cn(
             "mt-4 max-w-xl text-base leading-relaxed",
-            tone === "dark" ? "text-stone" : "text-cream/75",
+            tone === "dark" ? "text-fg-muted" : "text-cream/75",
             isCentered && "mx-auto",
           )}
         >

@@ -37,7 +37,7 @@ export function BookCard({ book, index }: BookCardProps) {
 
         {/* page-peel corner, appears on hover to reinforce "read online" */}
         <div
-          className="pointer-events-none absolute bottom-0 right-0 h-0 w-0 border-b-[26px] border-l-[26px] border-b-cream border-l-transparent opacity-0 shadow-[-2px_-2px_6px_rgba(0,0,0,0.15)] transition-opacity duration-300 group-hover:opacity-90"
+          className="pointer-events-none absolute bottom-0 right-0 h-0 w-0 border-b-[26px] border-l-[26px] border-b-surface border-l-transparent opacity-0 shadow-[-2px_-2px_6px_rgba(0,0,0,0.15)] transition-opacity duration-300 group-hover:opacity-90"
           aria-hidden="true"
         />
 
@@ -51,16 +51,16 @@ export function BookCard({ book, index }: BookCardProps) {
       </a>
 
       <div className="mt-3.5 px-0.5">
-        <h3 className="font-display text-base font-medium leading-snug text-charcoal">
+        <h3 className="font-display text-base font-medium leading-snug text-fg">
           <a href={`/books/${book.id}`} className="hover:text-gold-deep">
             {book.title}
           </a>
         </h3>
-        <p className="mt-0.5 text-sm text-stone">{book.author}</p>
-        <div className="mt-1.5 flex items-center gap-1 text-sm text-charcoal">
+        <p className="mt-0.5 text-sm text-fg-muted">{book.author}</p>
+        <div className="mt-1.5 flex items-center gap-1 text-sm text-fg">
           <Star className="h-3.5 w-3.5 fill-gold text-gold" strokeWidth={0} />
           <span className="font-medium">{book.rating.toFixed(1)}</span>
-          <span className="text-stone-light">({book.reviewCount})</span>
+          <span className="text-fg-faint">({book.reviewCount})</span>
         </div>
       </div>
     </motion.article>

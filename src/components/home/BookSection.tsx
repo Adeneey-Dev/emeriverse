@@ -6,7 +6,7 @@ import { mockBooks } from "../../data/books";
 
 export function BookSection() {
   return (
-    <section id="books" className="bg-cream py-20 lg:py-28" aria-labelledby="books-heading">
+    <section id="books" className="bg-surface py-20 lg:py-28" aria-labelledby="books-heading">
       <div className="container-page">
         <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
           <SectionHeading
