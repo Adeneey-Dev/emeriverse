@@ -35,13 +35,13 @@ export function Footer() {
               <Feather className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
             </span>
             <div className="leading-none">
-              <p className="font-display text-lg font-medium text-cream">James Whitaker</p>
-              <p className="mt-1 text-[0.6rem] font-semibold tracking-[0.2em] text-cream/50">AUTHOR &amp; STORYTELLER</p>
+              <p className="font-display text-lg font-medium tracking-wide text-cream">Emeriverse</p>
+              <p className="mt-1 text-[0.6rem] font-semibold tracking-[0.2em] text-cream/50">A UNIVERSE OF LEARNING</p>
             </div>
           </div>
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-cream/55">
-            Novels and short stories about the quiet moments that change everything, written
-            for readers who like to sit with a feeling a little longer.
+            Educational books and Easy Learning Flash Cards by Ifeanyi Emeribe, built to make
+            grammar, idioms, vocabulary, and general knowledge simple for every learner.
           </p>
           <div className="mt-6 flex items-center gap-3">
             {SOCIALS.map((social) => {
@@ -89,7 +89,7 @@ export function Footer() {
         <div id="community">
           <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-cream/40">Community</h3>
           <p className="mt-5 text-sm leading-relaxed text-cream/70">
-            Be part of a growing community of readers and dreamers.
+            Be part of a growing community of learners, parents, and educators.
           </p>
           <Button variant="outline-light" href="#membership" size="md" className="mt-5" icon={<ArrowRight className="h-4 w-4" strokeWidth={2} />}>
             Join the Community
@@ -99,7 +99,7 @@ export function Footer() {
 
       <div className="border-t border-cream/10 py-6">
         <p className="container-page text-center text-xs text-cream/40">
-          © 2026 James Whitaker. All rights reserved.
+          © 2026 Emeriverse — Ifeanyi Emeribe. All rights reserved.
         </p>
       </div>
     </footer>

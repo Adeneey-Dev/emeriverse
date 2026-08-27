@@ -4,9 +4,9 @@ import { Button } from "../ui/Button";
 import { InkStroke } from "../ui/InkStroke";
 
 const BENEFITS = [
-  { icon: Sparkles, label: "Exclusive Books & Stories" },
-  { icon: Clock, label: "Early Access" },
-  { icon: Gem, label: "Members-Only Content" },
+  { icon: Sparkles, label: "Exclusive Study Resources" },
+  { icon: Clock, label: "Early Access to New Titles" },
+  { icon: Gem, label: "Members-Only Learning Guides" },
 ];
 
 export function MembershipCTA() {
@@ -34,12 +34,13 @@ export function MembershipCTA() {
         <InkStroke className="mt-1.5 mb-5" />
 
         <h2 id="membership-heading" className="max-w-2xl font-display text-3xl font-medium leading-[1.15] text-cream sm:text-4xl lg:text-[2.75rem]">
-          Read More. Discover More. Become Part of the Story.
+          Learn More. Discover More. Grow With Emeriverse.
         </h2>
 
         <p className="mt-5 max-w-xl text-base leading-relaxed text-cream/70">
-          Join the premium community and unlock exclusive stories, early access to new
-          releases, and special content created for dedicated readers.
+          Membership is coming soon — join the waitlist to unlock exclusive study resources,
+          early access to new flash card releases, and learning guides made for dedicated
+          readers.
         </p>
 
         <ul className="mt-10 flex flex-col gap-6 sm:flex-row sm:gap-10">
@@ -57,10 +58,10 @@ export function MembershipCTA() {
         </ul>
 
         <div className="mt-10 flex flex-col items-center gap-3">
-          <Button variant="primary" size="lg" href="#membership">
-            Explore Membership
+          <Button variant="primary" size="lg" href="#newsletter-email">
+            Join the Waitlist
           </Button>
-          <span className="text-xs text-cream/45">Cancel anytime.</span>
+          <span className="text-xs text-cream/45">No spam. Cancel anytime.</span>
         </div>
       </motion.div>
     </section>

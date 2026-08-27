@@ -1,14 +1,13 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Users, BookOpen, Star, MessageCircle } from "lucide-react";
+import { ArrowRight, BookOpen, GraduationCap, Layers, Sparkles } from "lucide-react";
 import { Button } from "../ui/Button";
-import { HeroIllustration } from "./HeroIllustration";
-import type { Stat } from "../../types";
+import heroImage from "../../assets/hero-student.jpg";
 
-const STATS: (Stat & { icon: typeof BookOpen })[] = [
-  { id: "books", label: "Books Published", value: "12+", icon: BookOpen },
-  { id: "readers", label: "Happy Readers", value: "25K+", icon: Users },
-  { id: "rating", label: "Average Rating", value: "4.8", icon: Star },
-  { id: "comments", label: "Comments", value: "10K+", icon: MessageCircle },
+const STATS = [
+  { id: "books", label: "Books Published", value: "10+", icon: BookOpen },
+  { id: "range", label: "Active Since 2022", value: "2022–25", icon: Sparkles },
+  { id: "subjects", label: "Subjects Covered", value: "8+", icon: Layers },
+  { id: "platform", label: "Available on Amazon", value: "Kindle & Print", icon: GraduationCap },
 ];
 
 const container = {
@@ -29,9 +28,14 @@ export function Hero() {
   return (
     <section id="home" className="relative overflow-hidden bg-ink">
       <div className="absolute inset-0" aria-hidden="true">
-        <HeroIllustration />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/30" />
+        <img
+          src={heroImage}
+          alt=""
+          className="h-full w-full object-cover object-[70%_center]"
+          fetchPriority="high"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/35" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/40" />
       </div>
 
       <div className="container-page relative grid min-h-[92vh] grid-cols-1 items-center gap-12 pt-28 pb-16 lg:min-h-[88vh] lg:grid-cols-[1.1fr_0.9fr] lg:gap-8 lg:pb-20">
@@ -41,27 +45,34 @@ export function Hero() {
           animate={shouldReduceMotion ? undefined : "show"}
         >
           <motion.span variants={item} className="eyebrow">
-            Welcome to My World
+            Welcome to Emeriverse
           </motion.span>
 
           <motion.h1
             variants={item}
-            className="mt-4 max-w-xl font-display text-4xl font-medium leading-[1.08] text-cream sm:text-5xl lg:text-[3.4rem]"
+            className="mt-4 max-w-xl font-display text-4xl font-medium leading-[1.08] text-cream sm:text-5xl lg:text-[3.3rem]"
           >
-            Stories That Inspire, <span className="text-gold-pale">Words</span> That Connect.
+            A <span className="text-gold-pale">Universe</span> of Learning, One Concept at a Time.
           </motion.h1>
 
           <motion.p variants={item} className="mt-6 max-w-lg text-base leading-relaxed text-cream/70 sm:text-lg">
-            Explore my collection of books, short stories, and writings. Join a community of
-            readers who love thought-provoking stories and meaningful conversations.
+            Explore Ifeanyi Emeribe&rsquo;s growing library of Easy Learning Flash Cards —
+            practical, easy-to-follow books on English grammar, idioms, vocabulary, and general
+            knowledge, built for learners of every age.
           </motion.p>
 
           <motion.div variants={item} className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Button variant="primary" size="lg" href="#books" icon={<ArrowRight className="h-4 w-4" strokeWidth={2} />}>
               Explore My Books
             </Button>
-            <Button variant="outline-light" size="lg" href="#community" icon={<Users className="h-4 w-4" strokeWidth={2} />} iconPosition="left">
-              Join the Community
+            <Button
+              variant="outline-light"
+              size="lg"
+              href="#about"
+              icon={<GraduationCap className="h-4 w-4" strokeWidth={2} />}
+              iconPosition="left"
+            >
+              Meet the Author
             </Button>
           </motion.div>
 
@@ -69,10 +80,8 @@ export function Hero() {
             {STATS.map((stat) => (
               <div key={stat.id}>
                 <dt className="sr-only">{stat.label}</dt>
-                <dd className="flex items-center gap-1.5 font-display text-2xl font-medium text-cream">
-                  {stat.value}
-                </dd>
-                <dd className="mt-1 text-xs tracking-wide text-cream/50">{stat.label}</dd>
+                <dd className="font-display text-2xl font-medium text-cream">{stat.value}</dd>
+                <dd className="mt-1 text-xs leading-snug tracking-wide text-cream/50">{stat.label}</dd>
               </div>
             ))}
           </motion.dl>
@@ -88,11 +97,11 @@ export function Hero() {
             &ldquo;
           </span>
           <p className="mt-1 font-display text-lg italic leading-relaxed text-cream/90">
-            Writing is not just my passion, it&rsquo;s my way of connecting hearts and minds.
+            Learning becomes easier when knowledge is made simple.
           </p>
           <div className="mt-5 flex items-center gap-3">
             <div className="h-px flex-1 bg-cream/15" />
-            <span className="text-sm text-cream/60">James Whitaker</span>
+            <span className="text-sm text-cream/60">Ifeanyi Emeribe</span>
           </div>
         </motion.aside>
       </div>

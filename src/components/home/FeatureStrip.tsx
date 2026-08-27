@@ -1,31 +1,31 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { BookOpen, Heart, Share2, LockKeyhole } from "lucide-react";
+import { Library, Users, Share2, ShoppingBag } from "lucide-react";
 import type { Feature } from "../../types";
 
-const FEATURES: (Feature & { icon: typeof BookOpen })[] = [
+const FEATURES: (Feature & { icon: typeof Library })[] = [
   {
-    id: "read",
-    title: "Read Online",
-    description: "Enjoy a seamless reading experience directly on the website.",
-    icon: BookOpen,
+    id: "browse",
+    title: "Browse the Catalogue",
+    description: "Explore a growing library of flash cards and educational books, organized by subject.",
+    icon: Library,
   },
   {
-    id: "like",
-    title: "Like & Comment",
-    description: "Share your thoughts, like stories, and engage with the community.",
-    icon: Heart,
+    id: "community",
+    title: "Learn Together",
+    description: "Join a community of parents, teachers, and learners who use these resources every day.",
+    icon: Users,
   },
   {
     id: "share",
-    title: "Share Stories",
-    description: "Share your favorite stories with friends and spread the inspiration.",
+    title: "Share Resources",
+    description: "Share your favorite titles with fellow learners, classrooms, and homeschool groups.",
     icon: Share2,
   },
   {
-    id: "premium",
-    title: "Premium Access",
-    description: "Unlock exclusive content, premium stories, and special benefits.",
-    icon: LockKeyhole,
+    id: "own",
+    title: "Own Your Copy",
+    description: "Every title is available on Amazon in Kindle, paperback, or hardcover.",
+    icon: ShoppingBag,
   },
 ];
 

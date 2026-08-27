@@ -40,7 +40,8 @@ export function Newsletter() {
             Stay Connected
           </h2>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-fg-muted sm:text-base">
-            Be the first to know about new releases, exclusive stories, and special offers.
+            Be the first to know about new flash card releases, learning resources, and
+            special offers.
           </p>
 
           <AnimatePresence mode="wait">

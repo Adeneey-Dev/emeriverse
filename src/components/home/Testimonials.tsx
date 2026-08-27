@@ -21,8 +21,8 @@ export function Testimonials() {
     <section className="bg-surface py-20 lg:py-28" aria-labelledby="testimonials-heading">
       <div className="container-page">
         <SectionHeading
-          eyebrow="What Readers Say"
-          heading={<span id="testimonials-heading">Stories, shared both ways</span>}
+          eyebrow="What Learners Say"
+          heading={<span id="testimonials-heading">Trusted by parents, teachers &amp; learners</span>}
           align="center"
           className="mx-auto"
         />

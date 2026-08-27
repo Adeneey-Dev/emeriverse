@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, Search, Moon, Sun, Feather } from "lucide-react";
+import { Menu, X, Search, Feather } from "lucide-react";
 import { Button } from "../ui/Button";
+import { ThemeToggle } from "../ui/ThemeToggle";
 import { cn } from "../../lib/cn";
-import { useTheme } from "../../providers/useTheme";
 import type { NavLink } from "../../types";
 
 const NAV_LINKS: NavLink[] = [
@@ -19,8 +19,6 @@ const NAV_LINKS: NavLink[] = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
-  const isDark = theme === "dark";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -50,9 +48,9 @@ export function Navbar() {
             <Feather className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
           </span>
           <span className="flex flex-col leading-none">
-            <span className="font-display text-lg font-medium text-cream">James Whitaker</span>
+            <span className="font-display text-lg font-medium tracking-wide text-cream">Emeriverse</span>
             <span className="mt-1 text-[0.6rem] font-semibold tracking-[0.2em] text-cream/50">
-              AUTHOR &amp; STORYTELLER
+              A UNIVERSE OF LEARNING
             </span>
           </span>
         </a>
@@ -76,23 +74,15 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden items-center gap-5 lg:flex">
+        <div className="hidden items-center gap-4 lg:flex">
           <button
             type="button"
             aria-label="Search the site"
-            className="text-cream/80 transition-colors hover:text-gold-pale"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-transparent text-cream/75 transition-colors hover:border-gold/60 hover:bg-gold/10 hover:text-gold-pale"
           >
-            <Search className="h-[18px] w-[18px]" strokeWidth={1.75} />
+            <Search className="h-[17px] w-[17px]" strokeWidth={1.75} />
           </button>
-          <button
-            type="button"
-            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-            aria-pressed={isDark}
-            onClick={toggleTheme}
-            className="text-cream/80 transition-colors hover:text-gold-pale"
-          >
-            {isDark ? <Sun className="h-[18px] w-[18px]" strokeWidth={1.75} /> : <Moon className="h-[18px] w-[18px]" strokeWidth={1.75} />}
-          </button>
+          <ThemeToggle />
           <a href="#login" className="text-sm text-cream/80 transition-colors hover:text-cream">
             Login
           </a>
@@ -101,15 +91,18 @@ export function Navbar() {
           </Button>
         </div>
 
-        <button
-          type="button"
-          className="text-cream lg:hidden"
-          aria-label="Open menu"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(true)}
-        >
-          <Menu className="h-6 w-6" strokeWidth={1.75} />
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle size="sm" />
+          <button
+            type="button"
+            className="flex h-10 w-10 items-center justify-center text-cream"
+            aria-label="Open menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen(true)}
+          >
+            <Menu className="h-6 w-6" strokeWidth={1.75} />
+          </button>
+        </div>
       </nav>
 
       <AnimatePresence>
@@ -134,21 +127,10 @@ export function Navbar() {
               aria-label="Mobile navigation"
             >
               <div className="flex items-center justify-between">
-                <span className="font-display text-lg font-medium text-cream">James Whitaker</span>
-                <div className="flex items-center gap-4">
-                  <button
-                    type="button"
-                    aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-                    aria-pressed={isDark}
-                    onClick={toggleTheme}
-                    className="text-cream/80 transition-colors hover:text-gold-pale"
-                  >
-                    {isDark ? <Sun className="h-5 w-5" strokeWidth={1.75} /> : <Moon className="h-5 w-5" strokeWidth={1.75} />}
-                  </button>
-                  <button type="button" aria-label="Close menu" onClick={() => setMenuOpen(false)} className="text-cream">
-                    <X className="h-6 w-6" strokeWidth={1.75} />
-                  </button>
-                </div>
+                <span className="font-display text-lg font-medium text-cream">Emeriverse</span>
+                <button type="button" aria-label="Close menu" onClick={() => setMenuOpen(false)} className="text-cream">
+                  <X className="h-6 w-6" strokeWidth={1.75} />
+                </button>
               </div>
 
               <ul className="mt-10 flex flex-col gap-1">

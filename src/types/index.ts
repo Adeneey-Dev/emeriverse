@@ -17,8 +17,15 @@ export interface Book {
   /** Deterministic gradient tokens used to render the generated cover art */
   coverPalette: [string, string];
   accessType: AccessType;
-  rating: number;
-  reviewCount: number;
+  /** Optional — only render a rating row when real, verified figures exist.
+   *  Never fabricate these for a real author's real catalogue. */
+  rating?: number;
+  reviewCount?: number;
+  /** Publication year, shown as a small detail on the card */
+  year: number;
+  /** Link to the real product page (Amazon, etc.) — there is no in-house
+   *  reader yet, so book cards send readers here instead of a dead route. */
+  amazonUrl: string;
 }
 
 export interface Testimonial {

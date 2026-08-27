@@ -1,38 +1,36 @@
 import type { Testimonial } from "../types";
 
 /**
- * Placeholder reader testimonials for Phase 1.
- *
- * Shape matches the future `GET /api/testimonials` response so
- * <Testimonials /> can switch from this array to a fetch without
- * touching its render logic.
+ * Placeholder testimonials for Phase 1. These are illustrative, not real
+ * attributed quotes — swap this array for a `GET /api/testimonials` call
+ * once genuine reader/parent/teacher reviews are collected.
  */
 export const mockTestimonials: Testimonial[] = [
   {
-    id: "sarah-j",
-    name: "Sarah J.",
-    location: "Reader since 2021",
+    id: "amara-p",
+    name: "Amara P.",
+    location: "Parent",
     quote:
-      "Every story feels personal. I always find something meaningful in James's writing, and I find myself thinking about his characters for weeks afterward.",
+      "My daughter struggled with idioms until we found these flash cards. The concord formulas book finally made subject-verb agreement click for her too.",
     rating: 5,
-    initials: "SJ",
+    initials: "AP",
   },
   {
-    id: "daniel-m",
-    name: "Daniel M.",
-    location: "Reader since 2022",
+    id: "tunde-o",
+    name: "Tunde O.",
+    location: "Secondary school teacher",
     quote:
-      "Whispers of the Past kept me up until 2am on a work night. Rare to find a writer who trusts the reader to sit with silence between the big moments.",
+      "I use the Nigerian Leaders and Heroes set in class every term. Students remember the material far better than when it's just read from a textbook.",
     rating: 5,
-    initials: "DM",
+    initials: "TO",
   },
   {
-    id: "amara-o",
-    name: "Amara O.",
-    location: "Reader since 2023",
+    id: "chiamaka-n",
+    name: "Chiamaka N.",
+    location: "Homeschooling parent",
     quote:
-      "The premium community has genuinely changed how I read — the early chapters and the discussion threads make it feel like being part of the book's making.",
+      "Simple, clear, and genuinely fun for my kids. We've worked through the animals and colours sets and I'm already looking forward to the next release.",
     rating: 4,
-    initials: "AO",
+    initials: "CN",
   },
 ];
