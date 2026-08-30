@@ -29,19 +29,25 @@ export function Newsletter() {
   };
 
   return (
-    <section className="bg-surface-alt py-16 lg:py-20" aria-labelledby="newsletter-heading">
+    <section
+      className="bg-surface-alt py-16 lg:py-20"
+      aria-labelledby="newsletter-heading"
+    >
       <div className="container-page">
         <div className="mx-auto flex max-w-2xl flex-col items-center rounded-sm border border-surface-line bg-surface px-6 py-12 text-center sm:px-12">
           <span className="flex h-12 w-12 items-center justify-center rounded-full bg-ink text-gold">
             <Mail className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
           </span>
 
-          <h2 id="newsletter-heading" className="mt-5 font-display text-2xl font-medium text-fg sm:text-3xl">
+          <h2
+            id="newsletter-heading"
+            className="mt-5 font-display text-2xl font-medium text-fg sm:text-3xl"
+          >
             Stay Connected
           </h2>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-fg-muted sm:text-base">
-            Be the first to know about new flash card releases, learning resources, and
-            special offers.
+            Be the first to know about new flash card releases, learning
+            resources, and special offers.
           </p>
 
           <AnimatePresence mode="wait">
@@ -54,7 +60,7 @@ export function Newsletter() {
                 role="status"
               >
                 <CheckCircle2 className="h-4 w-4 text-gold" strokeWidth={2} />
-                You&rsquo;re on the list — welcome aboard.
+                You&rsquo;re on the list - welcome aboard.
               </motion.div>
             ) : (
               <motion.form
@@ -86,12 +92,20 @@ export function Newsletter() {
                     className="w-full rounded-sm border border-surface-line bg-surface px-4 py-3 text-sm text-fg placeholder:text-fg-faint focus:border-gold"
                   />
                   {error && (
-                    <p id="newsletter-error" className="mt-1.5 text-xs text-left text-red-700">
+                    <p
+                      id="newsletter-error"
+                      className="mt-1.5 text-xs text-left text-red-700"
+                    >
                       {error}
                     </p>
                   )}
                 </div>
-                <Button type="submit" variant="primary" size="md" className="sm:w-auto">
+                <Button
+                  type="submit"
+                  variant="primary"
+                  size="md"
+                  className="sm:w-auto"
+                >
                   Subscribe
                 </Button>
               </motion.form>

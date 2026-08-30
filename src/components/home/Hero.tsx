@@ -1,5 +1,11 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, BookOpen, GraduationCap, Layers, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  GraduationCap,
+  Layers,
+  Sparkles,
+} from "lucide-react";
 import { Button } from "../ui/Button";
 import heroImage from "../../assets/hero-student.jpg";
 
@@ -7,7 +13,12 @@ const STATS = [
   { id: "books", label: "Books Published", value: "10+", icon: BookOpen },
   { id: "range", label: "Active Since 2022", value: "2022–25", icon: Sparkles },
   { id: "subjects", label: "Subjects Covered", value: "8+", icon: Layers },
-  { id: "platform", label: "Available on Amazon", value: "Kindle & Print", icon: GraduationCap },
+  {
+    id: "platform",
+    label: "Available on Amazon",
+    value: "Kindle & Print",
+    icon: GraduationCap,
+  },
 ];
 
 const container = {
@@ -19,7 +30,11 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, y: 18 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" as const } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: "easeOut" as const },
+  },
 };
 
 export function Hero() {
@@ -52,17 +67,30 @@ export function Hero() {
             variants={item}
             className="mt-4 max-w-xl font-display text-4xl font-medium leading-[1.08] text-cream sm:text-5xl lg:text-[3.3rem]"
           >
-            A <span className="text-gold-pale">Universe</span> of Learning, One Concept at a Time.
+            A <span className="text-gold-pale">Universe</span> of Learning, One
+            Concept at a Time.
           </motion.h1>
 
-          <motion.p variants={item} className="mt-6 max-w-lg text-base leading-relaxed text-cream/70 sm:text-lg">
-            Explore Ifeanyi Emeribe&rsquo;s growing library of Easy Learning Flash Cards —
-            practical, easy-to-follow books on English grammar, idioms, vocabulary, and general
-            knowledge, built for learners of every age.
+          <motion.p
+            variants={item}
+            className="mt-6 max-w-lg text-base leading-relaxed text-cream/70 sm:text-lg"
+          >
+            Explore Ifeanyi Emeribe&rsquo;s growing library of Easy Learning
+            Flash Cards - practical, easy-to-follow books on English grammar,
+            idioms, vocabulary, and general knowledge, built for learners of
+            every age.
           </motion.p>
 
-          <motion.div variants={item} className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button variant="primary" size="lg" href="#books" icon={<ArrowRight className="h-4 w-4" strokeWidth={2} />}>
+          <motion.div
+            variants={item}
+            className="mt-9 flex flex-col gap-3 sm:flex-row"
+          >
+            <Button
+              variant="primary"
+              size="lg"
+              href="#books"
+              icon={<ArrowRight className="h-4 w-4" strokeWidth={2} />}
+            >
               Explore My Books
             </Button>
             <Button
@@ -76,12 +104,19 @@ export function Hero() {
             </Button>
           </motion.div>
 
-          <motion.dl variants={item} className="mt-14 grid max-w-lg grid-cols-2 gap-x-6 gap-y-7 sm:grid-cols-4 sm:gap-x-8">
+          <motion.dl
+            variants={item}
+            className="mt-14 grid max-w-lg grid-cols-2 gap-x-6 gap-y-7 sm:grid-cols-4 sm:gap-x-8"
+          >
             {STATS.map((stat) => (
               <div key={stat.id}>
                 <dt className="sr-only">{stat.label}</dt>
-                <dd className="font-display text-2xl font-medium text-cream">{stat.value}</dd>
-                <dd className="mt-1 text-xs leading-snug tracking-wide text-cream/50">{stat.label}</dd>
+                <dd className="font-display text-2xl font-medium text-cream">
+                  {stat.value}
+                </dd>
+                <dd className="mt-1 text-xs leading-snug tracking-wide text-cream/50">
+                  {stat.label}
+                </dd>
               </div>
             ))}
           </motion.dl>
@@ -93,7 +128,10 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
           className="relative mx-auto w-full max-w-sm rounded-sm border border-cream/12 bg-ink-soft/70 p-7 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.6)] backdrop-blur-sm lg:ml-auto lg:mr-0"
         >
-          <span className="font-display text-4xl leading-none text-gold" aria-hidden="true">
+          <span
+            className="font-display text-4xl leading-none text-gold"
+            aria-hidden="true"
+          >
             &ldquo;
           </span>
           <p className="mt-1 font-display text-lg italic leading-relaxed text-cream/90">

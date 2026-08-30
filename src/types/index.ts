@@ -16,6 +16,7 @@ export interface Book {
   genre: string;
   /** Deterministic gradient tokens used to render the generated cover art */
   coverPalette: [string, string];
+  coverImage?: string;
   accessType: AccessType;
   /** Optional — only render a rating row when real, verified figures exist.
    *  Never fabricate these for a real author's real catalogue. */

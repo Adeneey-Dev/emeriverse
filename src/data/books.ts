@@ -1,5 +1,17 @@
 import type { Book } from "../types";
 
+import grammaticalConcordCover from "../assets/books/The English Grammatical Concord Formulas.jpg";
+import commonErrorsInIdiomsCover from "../assets/books/Easy Learning Flash Cards on Common Errors in Idiom.jpg";
+//import fixedIdiomaticPairsCover from "../assets/books/Easy Learning Flash Cards on Fixed Idiomatic Pairs of Words.jpg";
+import tourAroundCanadaCover from "../assets/books/Tour Around Canada with Flashcards.jpg";
+import animalsAndYoungOnesCover from "../assets/books/Easy Learning Flash Cards on Animals and young ones.jpg"; // Note: "young ones" lowercase
+import nigerianLeadersCover from "../assets/books/Easy Learning Flashcards on Notable Nigerian Leaders and Heroes.jpg";
+import coloursIdentificationCover from "../assets/books/Easy Learning Flash Card on Colours Identification.jpg";
+import idiomsOfComparismCover from "../assets/books/Easy Learning Flash Card on Idioms of Comparism.jpg";
+import collectiveNounCover from "../assets/books/Easy Learning Flash card on Collective Noun.jpg";
+import distinctiveSoundCover from "../assets/books/Easy Learning Flash card on Distinctive Sound.jpg";
+import fixedIdiomaticPairsCover from "../assets/books/Easy learning flash cards on fixed Idiomatic pairs of words.jpg";
+
 /**
  * Ifeanyi Emeribe's published catalogue, sourced from his Amazon author
  * page. `accessType` reflects whether a title is available free through
@@ -11,11 +23,6 @@ import type { Book } from "../types";
  * figures for these titles, and inventing numbers next to a real
  * author's real books would misrepresent the catalogue. `BookCard`
  * only renders a rating row when `rating`/`reviewCount` are present.
- *
- * Replace this static array with a fetch to `GET /api/books` once a
- * backend exists — every consumer (BookSection, future /books page)
- * reads through this module rather than importing data inline, so the
- * swap is a one-file change.
  */
 export const books: Book[] = [
   {
@@ -24,6 +31,7 @@ export const books: Book[] = [
     author: "Ifeanyi Emeribe",
     genre: "Grammar",
     coverPalette: ["#3b2a1f", "#b8863b"],
+    coverImage: grammaticalConcordCover,
     accessType: "free",
     year: 2022,
     amazonUrl: "https://www.amazon.com/dp/B09QSPPRXB",
@@ -34,6 +42,7 @@ export const books: Book[] = [
     author: "Ifeanyi Emeribe",
     genre: "Idioms",
     coverPalette: ["#2a2420", "#8c6423"],
+    coverImage: commonErrorsInIdiomsCover,
     accessType: "premium",
     year: 2022,
     amazonUrl: "https://www.amazon.com/dp/B0B5FSNZ9B",
@@ -44,6 +53,7 @@ export const books: Book[] = [
     author: "Ifeanyi Emeribe",
     genre: "Idioms",
     coverPalette: ["#1f2a28", "#5c7a68"],
+    coverImage: fixedIdiomaticPairsCover,
     accessType: "free",
     year: 2022,
     amazonUrl: "https://www.amazon.com/dp/B0BC54J9GN",
@@ -54,6 +64,7 @@ export const books: Book[] = [
     author: "Ifeanyi Emeribe",
     genre: "Geography",
     coverPalette: ["#161a24", "#3c4f6e"],
+    coverImage: tourAroundCanadaCover,
     accessType: "premium",
     year: 2025,
     amazonUrl: "https://www.amazon.com/dp/B0F1LT6J2D",
@@ -64,6 +75,7 @@ export const books: Book[] = [
     author: "Ifeanyi Emeribe",
     genre: "Nature",
     coverPalette: ["#16221c", "#c79a4b"],
+    coverImage: animalsAndYoungOnesCover,
     accessType: "free",
     year: 2024,
     amazonUrl: "https://www.amazon.com/dp/B0CSBWTBD2",
@@ -74,6 +86,7 @@ export const books: Book[] = [
     author: "Ifeanyi Emeribe",
     genre: "History",
     coverPalette: ["#1c1614", "#6e4a3a"],
+    coverImage: nigerianLeadersCover,
     accessType: "premium",
     year: 2024,
     amazonUrl: "https://www.amazon.com/dp/B0DJBBTWJ2",
@@ -84,6 +97,7 @@ export const books: Book[] = [
     author: "Ifeanyi Emeribe & Esther Toyi",
     genre: "Early Learning",
     coverPalette: ["#2f1f36", "#a56bb8"],
+    coverImage: coloursIdentificationCover,
     accessType: "free",
     year: 2024,
     amazonUrl: "https://www.amazon.com/dp/B0CSBX9L33",
@@ -94,6 +108,7 @@ export const books: Book[] = [
     author: "Ifeanyi Emeribe",
     genre: "Idioms",
     coverPalette: ["#22301f", "#7a9a5c"],
+    coverImage: idiomsOfComparismCover,
     accessType: "free",
     year: 2022,
     amazonUrl: "https://www.amazon.com/dp/B09VZSSHCS",
@@ -104,6 +119,7 @@ export const books: Book[] = [
     author: "Ifeanyi Emeribe",
     genre: "Vocabulary",
     coverPalette: ["#241a2e", "#8863b8"],
+    coverImage: collectiveNounCover,
     accessType: "premium",
     year: 2022,
     amazonUrl: "https://www.amazon.com/dp/B09TS88K84",
@@ -114,6 +130,7 @@ export const books: Book[] = [
     author: "Ifeanyi Emeribe",
     genre: "Phonics",
     coverPalette: ["#132622", "#4a9a82"],
+    coverImage: distinctiveSoundCover,
     accessType: "premium",
     year: 2022,
     amazonUrl: "https://www.amazon.com/dp/B09W17VT3L",
