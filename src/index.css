@@ -61,6 +61,18 @@
   --color-fg-faint: #85795f;
 }
 
+/* Add to your global CSS or tailwind.css */
+/* Enhanced text shadow utility for better readability on images */
+.text-shadow-glow {
+  text-shadow: 0 2px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* For the quote card */
+.backdrop-blur-card {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
 @layer base {
   * {
     border-color: var(--color-surface-line);
@@ -81,7 +93,9 @@
     color: var(--color-fg);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    transition: background-color 0.25s ease, color 0.25s ease;
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease;
   }
 
   ::selection {
@@ -95,7 +109,10 @@
     border-radius: 2px;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     letter-spacing: -0.01em;
   }
@@ -143,7 +160,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
