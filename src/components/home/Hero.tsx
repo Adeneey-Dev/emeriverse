@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { Button } from "../ui/Button";
 import { HeroSlideshow } from "./HeroSlideshow";
+import slide0 from "../../assets/hero/slide-0-fun-way-cover.jpg";
 import slide1 from "../../assets/hero/slide-1-student-flashcards.jpg";
 import slide2 from "../../assets/hero/slide-2-classroom-alphabet.jpg";
 import slide3 from "../../assets/hero/slide-3-grammar-notebook.jpg";
@@ -16,6 +17,10 @@ import slide4 from "../../assets/hero/slide-4-idiom-cards-circle.jpg";
 import slide5 from "../../assets/hero/slide-5-flashcard-set.jpg";
 
 const HERO_IMAGES = [
+    {
+    src: slide0,
+    alt: "Learn Flashcards the Fun Way with Emeriverse — a student using flashcards and a laptop",
+  },
   {
     src: slide1,
     alt: "A student writing in a notebook, surrounded by Easy Learning Flash Cards",

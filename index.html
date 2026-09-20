@@ -16,22 +16,21 @@
       rel="stylesheet"
     />
     <title>Emeriverse - A Universe of Learning by Ifeanyi Emeribe</title>
-    <script>
+        <script>
       (function () {
         try {
-          var stored = window.localStorage.getItem("theme");
-          var theme =
-            stored === "light" || stored === "dark"
-              ? stored
-              : window.matchMedia("(prefers-color-scheme: dark)").matches
-                ? "dark"
-                : "light";
-          if (theme === "dark") {
+          var stored = window.sessionStorage.getItem("theme");
+          if (stored === "dark") {
             document.documentElement.classList.add("dark");
           }
+          // Uses sessionStorage (not localStorage) on purpose: it
+          // survives a page refresh within the same tab/session, but
+          // clears automatically once the tab or browser closes - so
+          // every fresh visit always starts on light, while refreshing
+          // mid-visit keeps whichever theme you were already on.
         } catch (e) {
-          // localStorage / matchMedia can throw in restricted contexts;
-          // default to light theme in that case.
+          // sessionStorage can throw in restricted/private contexts;
+          // default to light in that case too.
         }
       })();
     </script>
