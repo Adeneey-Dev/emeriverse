@@ -7,6 +7,8 @@ import { AuthorIntro } from "../components/home/AuthorIntro";
 import { MembershipCTA } from "../components/home/MembershipCTA";
 import { Testimonials } from "../components/home/Testimonials";
 import { Newsletter } from "../components/home/Newsletter";
+import { CartDrawer } from "../components/cart/CartDrawer";
+import { CheckoutOverlay } from "../components/checkout/CheckoutOverlay";
 
 export function Home() {
   return (
@@ -22,6 +24,8 @@ export function Home() {
         <Newsletter />
       </main>
       <Footer />
+      <CartDrawer />
+      <CheckoutOverlay />
     </div>
   );
 }

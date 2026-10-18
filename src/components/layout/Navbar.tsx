@@ -1,9 +1,10 @@
-// Navbar.tsx
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Search, Feather } from "lucide-react";
 import { Button } from "../ui/Button";
 import { ThemeToggle } from "../ui/ThemeToggle";
+import { CartButton } from "../cart/CartButton";
+import { useCart } from "../../providers/useCart";
 import { cn } from "../../lib/cn";
 import type { NavLink } from "../../types";
 
@@ -11,7 +12,7 @@ const NAV_LINKS: NavLink[] = [
   { label: "Home", href: "#home" },
   { label: "Books", href: "#books" },
   { label: "About Me", href: "#about" },
-  { label: "Blog", href: "#blog" },
+  { label: "Checkout", href: "#checkout" },
   { label: "Community", href: "#community" },
   { label: "Membership", href: "#membership" },
   { label: "Contact", href: "#contact" },
@@ -20,6 +21,7 @@ const NAV_LINKS: NavLink[] = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { openCheckout } = useCart();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -69,27 +71,37 @@ export function Navbar() {
         <ul className="hidden items-center gap-8 lg:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
-              <a
-                href={link.href}
-                className={cn(
-                  "relative text-sm font-medium transition-colors",
-                  "text-white/70 hover:text-white",
-                  link.label === "Home" && "text-white",
-                )}
-              >
-                {link.label}
-                {link.label === "Home" && (
-                  <span
-                    className="absolute -bottom-1.5 left-0 h-px w-full bg-gold-pale"
-                    aria-hidden="true"
-                  />
-                )}
-              </a>
+              {link.label === "Checkout" ? (
+                <button
+                  type="button"
+                  onClick={openCheckout}
+                  className="relative text-sm font-medium text-white/70 transition-colors hover:text-white"
+                >
+                  {link.label}
+                </button>
+              ) : (
+                <a
+                  href={link.href}
+                  className={cn(
+                    "relative text-sm font-medium transition-colors",
+                    "text-white/70 hover:text-white",
+                    link.label === "Home" && "text-white",
+                  )}
+                >
+                  {link.label}
+                  {link.label === "Home" && (
+                    <span
+                      className="absolute -bottom-1.5 left-0 h-px w-full bg-gold-pale"
+                      aria-hidden="true"
+                    />
+                  )}
+                </a>
+              )}
             </li>
           ))}
         </ul>
 
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <button
             type="button"
             aria-label="Search the site"
@@ -97,6 +109,7 @@ export function Navbar() {
           >
             <Search className="h-[17px] w-[17px]" strokeWidth={1.75} />
           </button>
+          <CartButton />
           <ThemeToggle tone="light" />
           <a
             href="#login"
@@ -110,6 +123,7 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
+          <CartButton size="sm" />
           <ThemeToggle size="sm" tone="light" />
           <button
             type="button"
@@ -161,13 +175,26 @@ export function Navbar() {
               <ul className="mt-10 flex flex-col gap-1">
                 {NAV_LINKS.map((link) => (
                   <li key={link.href}>
-                    <a
-                      href={link.href}
-                      onClick={() => setMenuOpen(false)}
-                      className="block border-b border-white/5 py-3.5 font-display text-lg text-white/90 hover:text-gold-pale"
-                    >
-                      {link.label}
-                    </a>
+                    {link.label === "Checkout" ? (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setMenuOpen(false);
+                          openCheckout();
+                        }}
+                        className="block w-full border-b border-white/5 py-3.5 text-left font-display text-lg text-white/90 hover:text-gold-pale"
+                      >
+                        {link.label}
+                      </button>
+                    ) : (
+                      <a
+                        href={link.href}
+                        onClick={() => setMenuOpen(false)}
+                        className="block border-b border-white/5 py-3.5 font-display text-lg text-white/90 hover:text-gold-pale"
+                      >
+                        {link.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

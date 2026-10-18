@@ -27,6 +27,8 @@ export interface Book {
   /** Link to the real product page (Amazon, etc.) — there is no in-house
    *  reader yet, so book cards send readers here instead of a dead route. */
   amazonUrl: string;
+  /** Price in Naira (NGN) for buying through this site's cart. */
+  price: number;
 }
 
 export interface Testimonial {
@@ -54,4 +56,15 @@ export interface Stat {
   id: string;
   label: string;
   value: string;
+}
+export interface CartItem {
+  book: Book;
+  quantity: number;
+}
+
+export interface DeliveryOption {
+  id: string;
+  label: string;
+  description: string;
+  price: number;
 }

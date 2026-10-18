@@ -2,7 +2,6 @@ import type { Book } from "../types";
 
 import grammaticalConcordCover from "../assets/books/The English Grammatical Concord Formulas.jpg";
 import commonErrorsInIdiomsCover from "../assets/books/Easy Learning Flash Cards on Common Errors in Idiom.jpg";
-//import fixedIdiomaticPairsCover from "../assets/books/Easy Learning Flash Cards on Fixed Idiomatic Pairs of Words.jpg";
 import tourAroundCanadaCover from "../assets/books/Tour Around Canada with Flashcards.jpg";
 import animalsAndYoungOnesCover from "../assets/books/Easy Learning Flash Cards on Animals and young ones.jpg"; // Note: "young ones" lowercase
 import nigerianLeadersCover from "../assets/books/Easy Learning Flashcards on Notable Nigerian Leaders and Heroes.jpg";
@@ -35,6 +34,7 @@ export const books: Book[] = [
     accessType: "free",
     year: 2022,
     amazonUrl: "https://www.amazon.com/dp/B09QSPPRXB",
+    price: 3500,
   },
   {
     id: "common-errors-in-idioms",
@@ -46,6 +46,7 @@ export const books: Book[] = [
     accessType: "premium",
     year: 2022,
     amazonUrl: "https://www.amazon.com/dp/B0B5FSNZ9B",
+    price: 6000,
   },
   {
     id: "fixed-idiomatic-pairs",
@@ -57,6 +58,7 @@ export const books: Book[] = [
     accessType: "free",
     year: 2022,
     amazonUrl: "https://www.amazon.com/dp/B0BC54J9GN",
+    price: 3500,
   },
   {
     id: "tour-around-canada",
@@ -68,6 +70,7 @@ export const books: Book[] = [
     accessType: "premium",
     year: 2025,
     amazonUrl: "https://www.amazon.com/dp/B0F1LT6J2D",
+    price: 7500,
   },
   {
     id: "animals-and-young-ones",
@@ -79,6 +82,7 @@ export const books: Book[] = [
     accessType: "free",
     year: 2024,
     amazonUrl: "https://www.amazon.com/dp/B0CSBWTBD2",
+    price: 3000,
   },
   {
     id: "nigerian-leaders-and-heroes",
@@ -90,6 +94,7 @@ export const books: Book[] = [
     accessType: "premium",
     year: 2024,
     amazonUrl: "https://www.amazon.com/dp/B0DJBBTWJ2",
+    price: 6500,
   },
   {
     id: "colours-identification",
@@ -101,6 +106,7 @@ export const books: Book[] = [
     accessType: "free",
     year: 2024,
     amazonUrl: "https://www.amazon.com/dp/B0CSBX9L33",
+    price: 3000,
   },
   {
     id: "idioms-of-comparism",
@@ -112,6 +118,7 @@ export const books: Book[] = [
     accessType: "free",
     year: 2022,
     amazonUrl: "https://www.amazon.com/dp/B09VZSSHCS",
+    price: 3500,
   },
   {
     id: "collective-noun",
@@ -123,6 +130,7 @@ export const books: Book[] = [
     accessType: "premium",
     year: 2022,
     amazonUrl: "https://www.amazon.com/dp/B09TS88K84",
+    price: 6000,
   },
   {
     id: "distinctive-sound",
@@ -134,5 +142,6 @@ export const books: Book[] = [
     accessType: "premium",
     year: 2022,
     amazonUrl: "https://www.amazon.com/dp/B09W17VT3L",
+    price: 6000,
   },
 ];

@@ -7,22 +7,25 @@ interface BadgeProps {
   className?: string;
 }
 
-/**
- * Access-level badge. Free/premium status is communicated by both label
- * and icon (not color alone) to stay accessible for color-blind readers.
- */
 export function Badge({ type, className }: BadgeProps) {
   const isPremium = type === "premium";
 
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1 rounded-sm px-2 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em]",
-        isPremium ? "bg-ink text-gold-pale" : "bg-cream text-charcoal",
+        "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[0.62rem] font-bold uppercase tracking-[0.12em] shadow-md",
+        isPremium ? "bg-gold text-ink" : "bg-white/95 text-emerald-700",
         className,
       )}
     >
-      {isPremium && <Lock className="h-3 w-3" aria-hidden="true" strokeWidth={2.25} />}
+      {isPremium ? (
+        <Lock className="h-3 w-3" aria-hidden="true" strokeWidth={2.5} />
+      ) : (
+        <span
+          className="h-1.5 w-1.5 rounded-full bg-emerald-500"
+          aria-hidden="true"
+        />
+      )}
       {isPremium ? "Premium" : "Free"}
     </span>
   );
